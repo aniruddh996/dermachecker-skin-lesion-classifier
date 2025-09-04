@@ -25,10 +25,8 @@ Vascular lesions
 
 Melanocytic nevi
 
-Dermatofibroma (duplicate index retained from dataset)
-
 🖼 Interactive App — Upload an image and get instant classification results
 
-📊 Reproducible Setup — Includes preprocessing, label mapping, and inference script
+
 
 
