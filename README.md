@@ -6,6 +6,10 @@ Melanoma classification using CNN (transfer learning)
 Dermachecker is a deep-learning-powered image classification app built to classify skin lesion images into one of seven categories.
 The model is based on DenseNet121 and fine-tuned on a dermoscopic skin image dataset.
 
+https://github.com/user-attachments/assets/bd6800d7-f960-44eb-9eb5-c34e8209abb6
+
+
+
 This was a personal project I worked on a few years ago to explore AI in healthcare and medical image classification. Recently, I refreshed the repository and added an interactive inference app built using Streamlit.
 
 ## Features
