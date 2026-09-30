@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DermaChecker — Robotic Skin Care Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="utility-bar">
+  <div class="shell">
+    <span>A personal DenseNet121 project — not a medical device</span>
+    <div class="utility-links">
+      <a href="https://github.com/aniruddh996/dermachecker-skin-lesion-classifier" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/aniruddhrajagopal/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="shell">
+    <a class="brand" href="#top">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="dotgrad" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#6D3FE0"/>
+            <stop offset="1" stop-color="#E23F87"/>
+          </linearGradient>
+        </defs>
+        <circle cx="17" cy="4"  r="2.4" fill="url(#dotgrad)"/>
+        <circle cx="26" cy="9"  r="2.4" fill="url(#dotgrad)"/>
+        <circle cx="30" cy="17" r="2.4" fill="url(#dotgrad)"/>
+        <circle cx="26" cy="25" r="2.4" fill="url(#dotgrad)"/>
+        <circle cx="17" cy="30" r="2.4" fill="url(#dotgrad)"/>
+        <circle cx="8"  cy="25" r="2.4" fill="url(#dotgrad)"/>
+        <circle cx="4"  cy="17" r="2.4" fill="url(#dotgrad)"/>
+        <circle cx="8"  cy="9"  r="2.4" fill="url(#dotgrad)"/>
+        <circle cx="17" cy="17" r="3.2" fill="url(#dotgrad)"/>
+      </svg>
+      <span class="brand-word">derma<span>checker</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About Product</a></li>
+      <li><a href="#how-it-works">How To Use?</a></li>
+      <li><a href="#test">Test &amp; Result</a></li>
+      <li><a href="#founder">Founder</a></li>
+      <li><a href="#disclaimer">Disclaimer</a></li>
+    </ul>
+    <a class="nav-cta" href="#test">Test Now</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg"><canvas id="hero-canvas"></canvas></div>
+  <div class="shell">
+    <div class="hero-content">
+      <span class="eyebrow">DenseNet121 · Trained on HAM10000</span>
+      <h1>
+        <span class="light">Your robotic skin</span>
+        <span class="accent">care specialist.</span>
+      </h1>
+      <p class="lede">Upload a photo of a skin lesion and DermaChecker's model — the same one from my original build, revived and reconnected here — gives you an instant, model-based read across seven lesion categories.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#test">Test Now →</a>
+        <a class="btn-ghost" href="#about">What is this? ↓</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">~89%</div><div class="label">best validation accuracy</div></div>
+        <div class="hero-stat"><div class="num">10,015</div><div class="label">training images (HAM10000)</div></div>
+        <div class="hero-stat"><div class="num">7</div><div class="label">lesion categories</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="block" id="about">
+  <div class="shell">
+    <div class="block-head">
+      <span class="eyebrow">About Product</span>
+      <h2>A demo, not a diagnosis.</h2>
+      <p>DermaChecker is a personal project exploring AI in dermatology — a DenseNet121 CNN fine-tuned by transfer learning to sort dermoscopic images into seven lesion types.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <span class="tag">What it is</span>
+        <h3>A transfer-learning classifier</h3>
+        <p>Built on DenseNet121 and fine-tuned on the HAM10000 dermoscopic image set, DermaChecker takes a photo of a skin lesion and returns the model's best guess across seven categories, from benign moles to melanoma-adjacent classes — with a confidence score for each.</p>
+      </div>
+      <div class="about-card">
+        <span class="tag">Why it exists</span>
+        <h3>Curiosity about AI in healthcare</h3>
+        <p>I built the first version of this a few years ago to explore what transfer learning could do on a real medical imaging problem. This revived version fixes the original deployment bugs and reconnects it to the real trained weights — same model, working demo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block block-alt" id="how-it-works">
+  <div class="shell">
+    <div class="block-head">
+      <span class="eyebrow">How To Use?</span>
+      <h2>Two steps. No account needed.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8a2 2 0 0 1 2-2h1.2l.7-1.4A2 2 0 0 1 9.7 3.5h4.6a2 2 0 0 1 1.8 1.1L16.8 6H18a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8Z"/><circle cx="12" cy="13" r="3.4"/></svg>
+        </div>
+        <div class="step-num">STEP 1</div>
+        <h3>Take a photo of the lesion</h3>
+        <p>Center the mole or spot in frame, in good light, filling as much of the shot as you can.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4M12 4 8 8M12 4l4 4"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+        </div>
+        <div class="step-num">STEP 2</div>
+        <h3>Upload it below</h3>
+        <p>DermaChecker's model runs the image through the classifier and returns a result in under a second.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="test">
+  <div class="shell">
+    <div class="block-head">
+      <span class="eyebrow">Test &amp; Result</span>
+      <h2>Try it on a real photo.</h2>
+      <p>Runs entirely on this machine — your image is never uploaded anywhere outside this local server.</p>
+    </div>
+
+    <div class="test-panel">
+      <div>
+        <div class="dropzone" id="dropzone">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M12 4 8 8M12 4l4 4"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+          <div class="dz-title">Drop an image, or click to browse</div>
+          <div class="dz-sub">JPG or PNG</div>
+          <input type="file" id="file-input" accept="image/png, image/jpeg">
+        </div>
+        <div class="preview-wrap" id="preview-wrap" style="display:none;">
+          <img id="preview-img" alt="Uploaded lesion preview">
+          <button class="preview-clear" id="preview-clear" title="Remove image">✕</button>
+        </div>
+      </div>
+
+      <div class="result-side">
+        <button class="btn-primary analyze-btn" id="analyze-btn" disabled>Analyze</button>
+        <div class="api-warning" id="api-warning"></div>
+        <div id="result-placeholder" class="result-placeholder">Upload a photo to see a prediction here.</div>
+        <div class="result-card" id="result-card">
+          <div class="result-label-row">
+            <div class="result-label" id="result-label">—</div>
+            <div class="result-conf" id="result-conf">—</div>
+          </div>
+          <div class="bar-row" id="bar-row"></div>
+        </div>
+        <div class="demo-disclaimer">This is a personal demo model, not a diagnostic tool and not FDA-cleared. Don't use it to make decisions about a real lesion — see a dermatologist for that.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block block-alt" id="founder">
+  <div class="shell">
+    <div class="block-head">
+      <span class="eyebrow">Founder</span>
+      <h2>Who built this</h2>
+    </div>
+    <div class="founder-card">
+      <div class="founder-avatar">AR</div>
+      <div>
+        <div class="founder-name">Aniruddh Rajagopal</div>
+        <div class="founder-role">Machine Learning Engineer</div>
+        <p class="founder-bio">5+ years building production recommendation, ranking, and — with DermaChecker — medical imaging models. Currently an MS Data Science candidate at George Washington University, open to full-time ML/DS roles.</p>
+        <div class="founder-links">
+          <a href="https://www.linkedin.com/in/aniruddhrajagopal/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/aniruddh996" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="disclaimer">
+  <div class="shell">
+    <div class="disclaimer-box">
+      <h2>Disclaimer</h2>
+      <p><strong>DermaChecker is a personal machine learning project, not a medical device.</strong> It was built to explore transfer learning on a dermatological imaging dataset (HAM10000) and is shown here as a portfolio demo.</p>
+      <p>Its predictions are not clinically validated, have not been reviewed by a dermatologist or regulatory body, and should never be used to diagnose, rule out, or make decisions about a real skin condition — including melanoma. If you're concerned about a mole or lesion, please see a licensed dermatologist.</p>
+      <p>While reviving this project I traced a labeling bug in the original training notebook: a copy-paste typo mapped melanoma images ('mel') to the string "dermatofibroma" instead of "melanoma" when building the training labels, so one of the model's seven output classes was trained on real melanoma photos under the wrong name. This demo corrects the displayed label for that class to Melanoma rather than hiding the issue — worth knowing if you extend or retrain this model.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shell">
+    <span>Built by Aniruddh Rajagopal — revived from an earlier project</span>
+    <div class="footer-links">
+      <a href="https://github.com/aniruddh996/dermachecker-skin-lesion-classifier" target="_blank" rel="noopener">Source</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

@@ -9,20 +9,22 @@ import torch.nn as nn
 from torchvision import models, transforms
 
 # ---------------- Config ----------------
-# Your exact mapping (index -> label)
+# Index -> label. Index 6 is corrected to 'Melanoma' -- the training notebook's
+# label dict had a 'mel': 'dermatofibroma' typo, so this class was actually
+# trained on melanoma images under the wrong category name. See README.
 IDX_TO_LABEL: Dict[int, str] = {
-    2: 'Benign keratosis-like lesions ',
-    4: 'Melanocytic nevi',
-    3: 'Dermatofibroma',
-    6: 'Dermatofibroma',
-    5: 'Vascular lesions',
-    1: 'Basal cell carcinoma',
     0: 'Actinic keratoses',
+    1: 'Basal cell carcinoma',
+    2: 'Benign keratosis-like lesions',
+    3: 'Dermatofibroma',
+    4: 'Melanocytic nevi',
+    5: 'Vascular lesions',
+    6: 'Melanoma',
 }
 NUM_CLASSES = len(IDX_TO_LABEL)
 
 # Default checkpoint path (you can change in the sidebar or upload a file)
-DEFAULT_MODEL_PATH = "best_model_weights.pt"
+DEFAULT_MODEL_PATH = "best_model_weights_fp16.pt"
 
 DEVICE = torch.device("cpu")  # set to torch.device("cuda") if running with GPU
 
